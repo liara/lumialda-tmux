@@ -10,7 +10,9 @@ for GNU Screen.
 ## Installation:
 
 1. Clone this repository
-    ```git clone https://github.com/liara/lumialda-tmux.git```
+    ```
+    git clone https://github.com/liara/lumialda-tmux.git
+    ```
 2. Move the contents of `scripts` to a directory in your `PATH`, probably `~/bin`. 
    To add `~/bin` to `PATH` add `export PATH=$HOME/bin:${PATH}` to your shell 
    startup file .zshrc, .bashrc, .kshrc or else.
