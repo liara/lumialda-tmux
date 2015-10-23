@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#LOAD="$(cut -d " " -f -3 /proc/loadavg)"
+LOAD="$(cat /proc/loadavg|awk '{print $1}')"
+
+echo $LOAD
+

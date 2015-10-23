@@ -1,0 +1,12 @@
+#!/bin/bash
+# uptime.sh
+# get uptime from /proc/uptime
+# source https://github.com/meskarune/lumialda/tree/master/screen
+uptime=$(</proc/uptime)
+uptime=${uptime%%.*}
+
+minutes=$(( uptime/60%60 ))
+hours=$(( uptime/60/60%24 ))
+days=$(( uptime/60/60/24 ))
+
+echo "$days days, $hours hours, $minutes minutes" 

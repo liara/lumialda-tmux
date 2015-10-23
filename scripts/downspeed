@@ -1,0 +1,42 @@
+#!/bin/bash
+# source https://github.com/gryftir/tmux-networkspeed
+
+RXB=0
+for rxbytes in /sys/class/net/*/statistics/rx_bytes ; do
+  let RXB+=$(<$rxbytes)
+done
+
+sleep 2
+
+RXBN=0
+for rxbytes in /sys/class/net/*/statistics/rx_bytes ; do
+  let RXBN+=$(<$rxbytes)
+done
+#divide by two for the period, multiply by 10 to allow a correct decimal place
+RXDIF=$(echo $(((RXBN - RXB) *5  )))
+
+SPEEDD="↓ B/s"
+if [ $RXDIF -ge 10240 ]; then
+	SPEEDD="↓ Ki/s"
+	RXDIF=$(echo $((RXDIF / 1024 )) )
+fi
+
+if [ $RXDIF -ge 10240 ]; then
+	SPEEDD="↓ Mi/s"
+	RXDIF=$(echo $((RXDIF / 1024 )) )
+fi
+
+if [ $RXDIF -ge 10240 ]; then
+	SPEEDD="↓ Gi/s"
+	RXDIF=$(echo $((RXDIF / 1024 )) )
+fi
+RXDIFF=$(($RXDIF % 10 ))
+RXDIFI=$(( $RXDIF / 10 ))
+RXDIF="$RXDIFI"
+
+if [ $RXDIFF -ne 0 ]; then
+	RXDIF=$( echo  "$RXDIFI.$RXDIFF" )
+fi
+
+echo "$RXDIF $SPEEDD"
+

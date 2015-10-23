@@ -1,0 +1,6 @@
+#!/bin/bash
+# source https://github.com/meskarune/lumialda/tree/master/screen
+
+DISK="$(du -sh $HOME 2>/dev/null | cut -f 1)"
+
+echo $DISK
