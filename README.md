@@ -2,7 +2,7 @@
 
 
 A basic tmux configuration with different color themes and system status
-information to get you started, based on [lumialda](https://github.com/meskarune/lumialda) 
+information for a quick start, based on [lumialda](https://github.com/meskarune/lumialda) 
 for GNU Screen.
 
 ![screenshot](https://raw.github.com/liara/lumialda-tmux/master/screenshot.png)
