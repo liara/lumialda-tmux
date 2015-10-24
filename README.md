@@ -13,7 +13,7 @@ for GNU Screen.
     ```
     git clone https://github.com/liara/lumialda-tmux.git
     ```
-2. Move the contents of `scripts` to a directory in your `PATH`, probably `~/bin`. 
+2. Move the scripts from `tmux` to a directory in your `PATH`, probably `~/bin`. 
    To add `~/bin` to `PATH` add `export PATH=$HOME/bin:${PATH}` to your shell 
    startup file .zshrc, .bashrc, .kshrc or else.
 3. Move a `*tmux.conf` configuration file to your home
